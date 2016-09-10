@@ -36,6 +36,8 @@
            <asp:Label CssClass="textlabel" ID="Label6" runat="server" Text="Tarjoushinta(Ilman ALV):"></asp:Label>
           <asp:Label CssClass="resultlabel" ID="lblNaytaTarjousHinta" runat="server" Text="---"></asp:Label>
            <asp:Label ID="Label9" runat="server" Text=" €"></asp:Label>
+           <br />
+           <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
        </div>
     </form>
 </body>
