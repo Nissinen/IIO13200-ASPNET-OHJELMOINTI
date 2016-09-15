@@ -6,22 +6,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Index : System.Web.UI.Page
+public partial class Viikkotehtava1 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
-
-
     protected void btnLaske_Click(object sender, EventArgs e)
     {
         try
         {
-            lblError.Text = "";
+            lblMessages.Text = "";
             double leveys = Convert.ToDouble(txtLeveys.Text);
             double korkeus = Convert.ToDouble(txtKorkeus.Text);
-            double karminLeveys = Convert.ToDouble(txtKarminLeveys.Text);
+            double karminLeveys = Convert.ToDouble(txtKarmi.Text);
             double pintaAla = (korkeus / 1000) * (leveys / 1000); //neliömetreinä
             double piiri = (leveys * 2 / 1000 + korkeus * 2 / 1000);
             double kate = Convert.ToDouble(ConfigurationManager.AppSettings["kate"]) / 100;
@@ -31,14 +29,13 @@ public partial class Index : System.Web.UI.Page
 
             double hinta = (1 + kate) * ((pintaAla * nelioHinta) + (piiri * alumiininHinta) + tyomenekki);
 
-            lblNaytaPintaAla.Text = Convert.ToString(pintaAla);
-            lblNaytaKarminPiiri.Text = Convert.ToString(piiri);
-            lblNaytaTarjousHinta.Text = Convert.ToString(hinta);
+            lblPintaAla.Text = Convert.ToString(pintaAla);
+            lblPiiri.Text = Convert.ToString(piiri);
+            lblHinta.Text = Convert.ToString(hinta);
         }
         catch (Exception)
         {
-            lblError.Text = "Input numbers only!";
+            lblMessages.Text = "Input numbers only!";
         }
-
     }
 }
