@@ -46,6 +46,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tehtava1", "Tehtava1\", "{9
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tehtava2", "Tehtava2\", "{B7A72C27-BAA3-469D-A840-AB35E25A5693}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59904"
+		Debug.AspNetCompiler.PhysicalPath = "Tehtava2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59904\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59904"
+		Release.AspNetCompiler.PhysicalPath = "Tehtava2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59904\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59904"
+		SlnRelativePath = "Tehtava2\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +82,10 @@ Global
 		{9A3685A5-6DCB-41F7-9205-FA453EDA625E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A3685A5-6DCB-41F7-9205-FA453EDA625E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A3685A5-6DCB-41F7-9205-FA453EDA625E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B7A72C27-BAA3-469D-A840-AB35E25A5693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A72C27-BAA3-469D-A840-AB35E25A5693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A72C27-BAA3-469D-A840-AB35E25A5693}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A72C27-BAA3-469D-A840-AB35E25A5693}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
