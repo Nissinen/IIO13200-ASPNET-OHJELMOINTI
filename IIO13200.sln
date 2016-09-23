@@ -68,6 +68,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tehtava2", "Tehtava2\", "{B
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tehtava3", "Tehtava3\", "{DC6B7E52-2F97-4A77-872B-ABE29B190C27}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51553"
+		Debug.AspNetCompiler.PhysicalPath = "Tehtava3\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51553\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51553"
+		Release.AspNetCompiler.PhysicalPath = "Tehtava3\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51553\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51553"
+		SlnRelativePath = "Tehtava3\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +108,10 @@ Global
 		{B7A72C27-BAA3-469D-A840-AB35E25A5693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7A72C27-BAA3-469D-A840-AB35E25A5693}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7A72C27-BAA3-469D-A840-AB35E25A5693}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DC6B7E52-2F97-4A77-872B-ABE29B190C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6B7E52-2F97-4A77-872B-ABE29B190C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6B7E52-2F97-4A77-872B-ABE29B190C27}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6B7E52-2F97-4A77-872B-ABE29B190C27}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
