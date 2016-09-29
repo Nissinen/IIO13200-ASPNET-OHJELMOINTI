@@ -1,14 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Index" MasterPageFile="~/MasterPage.master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>IIO13200 .NET Ohjelmointi</title>
     <link href="CSS/demo.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
         <div>
             <h1>IIO13200. NET Ohjelmointi</h1>
             <h2>1.kontaktikerta</h2>
@@ -28,8 +26,9 @@
             <p>
                 <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Source.aspx">Tiedon välitys 6 tapaa</asp:HyperLink>
             </p>
-
+            <h2> Mustang demo</h2>
+            <a href="FordMustang.aspx">Ford Mustang sivulle</a>
+            <a href="MoviesFromXML.aspx">Movies from xml</a>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+
