@@ -7,7 +7,10 @@
          SelectCommand="SELECT [astunnus], [asnimi], [yhteyshlo], [postitmp] FROM [asiakas]">
     </asp:sqldatasource>
     <div>
+        <h1>SQL:llä</h1>
         <asp:gridview ID="gvMovies" DataSourceID="srcAsiakkaat" runat="server"></asp:gridview>
+        <h1>DBDemoxOy:llä</h1>
+        <asp:gridview ID="gvMovies2" runat="server"></asp:gridview>
     </div>
 </asp:Content>
 
