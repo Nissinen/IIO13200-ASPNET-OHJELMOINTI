@@ -13,6 +13,7 @@
         <div>
             <asp:Button ID="btnGet3" Text="Hae 3 Oppilasta" runat="server" OnClick="btnHae3_Click" />
             <asp:Button ID="btnGetAll" Text="Hae Kaikki Oppilaat" runat="server" OnClick="btnHaeKaikki_Click" />
+            <asp:Button ID="btnGetFromMysli" Text="Hae MySQL tietokannasta" runat="server" OnClick="btnGetFromMysli_Click" />
         </div>
         <div id="tulos">
             <asp:GridView ID="gvStudents" runat="server"></asp:GridView>
