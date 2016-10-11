@@ -19,4 +19,16 @@ namespace JAMK.IT {
         public string Party { get; set; }
         public string Position { get; set; }
     }
+    public class Train
+    {
+        public string trainNumber { get; set; }
+        public string cancelled { get; set; }
+        public string departureDate { get; set; }
+        public string trainType{ get; set; }
+    }
+    public class Station
+    {
+        public string stationName { get; set; }
+        public string stationShortCode { get; set; }
+    }
 }
