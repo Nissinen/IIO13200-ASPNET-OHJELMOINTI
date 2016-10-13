@@ -17,7 +17,11 @@ public partial class RSSFeed : System.Web.UI.Page
     {
         //asetetaan XmlDataSource poittaamaan Iltasanomien rss feediin
         xdsFeedit.DataFile = @"http://www.iltasanomat.fi/rss/tuoreimmat.xml";
-        xdsFeedit.XPath = @"rss/channel/item";
+        GetFeeds();
+    }
+    protected void btnGetFeedsYle_Click(object sender, EventArgs e)
+    {
+        xdsFeedit.DataFile = @"http://feeds.yle.fi/uutiset/v1/majorHeadlines/YLE_UUTISET.rss";
         GetFeeds();
     }
     protected void GetFeeds()
@@ -30,16 +34,25 @@ public partial class RSSFeed : System.Web.UI.Page
             //rssfeedin title ja julkaisu aika
             XmlNode node1 = xmlDoc.SelectSingleNode("/rss/channel");
             string otsikko = node1["title"].InnerText;
-            string jaika = node1["pubDate"].InnerText;
+           // string jaika = node1["pubDate"].InnerText;
 
             XmlNodeList nodes = xmlDoc.SelectNodes("/rss/channel/item");
+            string rsscategory = "";
+            string rsstitle = "";
+            string rsslink = "";
+            HyperLink hl = new HyperLink();
+
+            messages.Text = string.Format("<h1> {0} </h1>", otsikko);
 
             foreach (XmlNode item in nodes)
             {
-
+                rsscategory = item["category"].InnerText;
+                rsstitle = item["title"].InnerText;
+                rsslink = item["link"].InnerText;
+                hl.Text = rsstitle;
+                hl.NavigateUrl = rsslink;
+                messages.Text += string.Format("{2}: <a href='{0}'>{1}</a><br>", rsslink, rsstitle,rsscategory);
             }
-
-            messages.Text = string.Format("<h1> {0} {1} </h1>", otsikko, jaika);
         }
         catch (Exception ex)
         {
