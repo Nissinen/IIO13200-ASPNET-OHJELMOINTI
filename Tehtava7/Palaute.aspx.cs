@@ -68,11 +68,11 @@ public partial class Palaute : System.Web.UI.Page
 
     protected void SendFeedBackMySQL_Click(object sender, EventArgs e)
     {
-
         string ConnString = ConfigurationManager.ConnectionStrings["Mysli"].ConnectionString;
-        string insert = "Insert into palaute(parametrit mitä onkaan) values(mitä onkaan)";
+        string insert = "Insert into pelaajat(pvm, tekija, opittu, haluanoppia, hyvaa, parannettavaa, muuta) values('" + Pvm.Text + "','" + Nimi.Text + "','" + Opittu.Text +
+            "','" + HaluanOppia.Text + "','" + Hyvaa.Text + "','" + Parannettavaa.Text + "','" + Muuta.Text + "')";
 
-       /* try
+        try
         {
             MySqlConnection conn = new MySqlConnection(ConnString);
             MySqlCommand MyCommand = new MySqlCommand(insert, conn);
@@ -85,7 +85,7 @@ public partial class Palaute : System.Web.UI.Page
         catch (Exception ex)
         {
             userMessage.Text = ex.Message;
-        }*/
+        }
         
     }
 }
