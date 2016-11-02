@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Palautteet>
+  <Palaute>
+    <pvm>10.3.1029</pvm>
+    <tekija>elmeri saarinen</tekija>
+    <opittu>soutamaan</opittu>
+    <haluanoppia>uimaan</haluanoppia>
+    <hyvaa>airot</hyvaa>
+    <parannettavaa>vene</parannettavaa>
+    <muuta>tulppa olisi hyvä veneeseen</muuta>
+  </Palaute>
+  <Palaute>
+    <pvm>11.1.1111</pvm>
+    <tekija>jepi</tekija>
+    <opittu>kaikkea</opittu>
+    <haluanoppia>uutta</haluanoppia>
+    <hyvaa>perjantai</hyvaa>
+    <parannettavaa>viikonlopun pituus</parannettavaa>
+    <muuta>rairai</muuta>
+  </Palaute>
+  <Palaute>
+    <pvm>2.11.2016</pvm>
+    <tekija>OJ</tekija>
+    <opittu>paljon</opittu>
+    <haluanoppia>lisää</haluanoppia>
+    <hyvaa>onnistuu</hyvaa>
+    <parannettavaa>tää softa</parannettavaa>
+    <muuta>-</muuta>
+  </Palaute>
+</Palautteet>

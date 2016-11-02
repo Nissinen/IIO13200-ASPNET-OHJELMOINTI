@@ -152,6 +152,29 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tehtava8", "Tehtava8\", "{8
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "33412"
+		SlnRelativePath = "Tehtava8\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tehtava7", "Tehtava7\", "{117A8696-A502-4EC6-9067-92931F59AC79}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_41406"
+		Debug.AspNetCompiler.PhysicalPath = "Tehtava7\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_41406\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_41406"
+		Release.AspNetCompiler.PhysicalPath = "Tehtava7\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_41406\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "41406"
+		SlnRelativePath = "Tehtava7\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
@@ -189,6 +212,10 @@ Global
 		{8BF392AB-C821-47BA-B2C6-7AB0B2BA443A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BF392AB-C821-47BA-B2C6-7AB0B2BA443A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{8BF392AB-C821-47BA-B2C6-7AB0B2BA443A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{117A8696-A502-4EC6-9067-92931F59AC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117A8696-A502-4EC6-9067-92931F59AC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117A8696-A502-4EC6-9067-92931F59AC79}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{117A8696-A502-4EC6-9067-92931F59AC79}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
