@@ -68,9 +68,10 @@ public partial class Palaute : System.Web.UI.Page
 
     protected void SendFeedBackMySQL_Click(object sender, EventArgs e)
     {
+        string opintojakso = "IIO13200";
         string ConnString = ConfigurationManager.ConnectionStrings["Mysli"].ConnectionString;
-        string insert = "Insert into pelaajat(pvm, tekija, opittu, haluanoppia, hyvaa, parannettavaa, muuta) values('" + Pvm.Text + "','" + Nimi.Text + "','" + Opittu.Text +
-            "','" + HaluanOppia.Text + "','" + Hyvaa.Text + "','" + Parannettavaa.Text + "','" + Muuta.Text + "')";
+        string insert = "Insert into palaute(opintojakso, tekija, opittu, haluanoppia, hyvaa, parannettavaa, muuta, pvm) values('" + opintojakso + "','" + Nimi.Text + "','" + Opittu.Text + "','" + HaluanOppia.Text +
+            "','" + Hyvaa.Text + "','" + Parannettavaa.Text + "','" + Muuta.Text + "','" + Pvm.Text + "')";
 
         try
         {

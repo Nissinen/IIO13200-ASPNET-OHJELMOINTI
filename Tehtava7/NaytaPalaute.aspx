@@ -14,7 +14,7 @@
         <br />
         <h2 class="w3-container w3-indigo">Palautteet MySQL:stä</h2>
         
-            <asp:SqlDataSource ID="srcMysli" runat="server" ProviderName="MySql.Data.MySqlClient" ConnectionString="<%$ ConnectionStrings:Mysli %>" SelectCommand="SELECT * FROM palauteet"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="srcMysli" runat="server" ProviderName="MySql.Data.MySqlClient" ConnectionString="<%$ ConnectionStrings:Mysli %>" SelectCommand="SELECT * FROM palaute"></asp:SqlDataSource>
          <asp:GridView ID="gvMySQLPalautteet" runat="server" DataSourceID="srcMysli">
     </asp:GridView>
              
