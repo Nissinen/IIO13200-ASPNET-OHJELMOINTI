@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 public partial class BookShop : System.Web.UI.Page
 {
     protected static BookShopEntities ctx;
+    protected static bool KustiValittu;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -35,6 +36,7 @@ public partial class BookShop : System.Web.UI.Page
     }
     protected void FillControls()
     {
+        SetButton();
         //ui controllien alustaminen
         var result = from c in ctx.Customers orderby c.lastname select new { c.id, c.lastname };
         //määritellään dropdownlistille mitä se esittää
@@ -44,6 +46,9 @@ public partial class BookShop : System.Web.UI.Page
         ddlCustomers.DataValueField = "id";
         ddlCustomers.DataBind();
         ddlCustomers.Items.Insert(0, string.Empty);
+        //11.10
+        txtEtunimi.Text = string.Empty;
+        txtSukunimi.Text = string.Empty;
 
     }
 
@@ -56,6 +61,8 @@ public partial class BookShop : System.Web.UI.Page
     {
         if(ddlCustomers.SelectedIndex > 0)
         {
+            KustiValittu = true;
+            SetButton();
             //tyhjäään tilaukset
             ddlOrders.Items.Clear();
 
@@ -68,6 +75,10 @@ public partial class BookShop : System.Web.UI.Page
             if(asiakas != null)
             {
                 lblMessages.Text = string.Format("Valitsit asiakkaan {0}", asiakas.lastname);
+                //jatko 11.10
+                txtEtunimi.Text = asiakas.firstname;
+                txtSukunimi.Text = asiakas.lastname;
+                KustiValittu = true;
                 //tutkitaan onko valitulla asiakkaalla tilauksia ja jos on näytetään
                 if(asiakas.Orders.Count > 0)
                 {
@@ -92,6 +103,95 @@ public partial class BookShop : System.Web.UI.Page
                 else
                 {
                     lblMessages.Text += " , ei ole tilauksia.";
+                }
+            }
+        }
+        else
+        {
+            lblMessages.Text = string.Empty;
+            KustiValittu = false;
+            txtEtunimi.Text = string.Empty;
+            txtSukunimi.Text = string.Empty;
+            SetButton();
+        }
+    }
+
+    protected void SetButton()
+    {
+        btnLuoUusiAsiakas.Enabled = !KustiValittu;
+        btnTallenna.Enabled = KustiValittu;
+        btnPoista.Enabled = KustiValittu;
+    }
+
+    protected void btnLuoUusiAsiakas_Click(object sender, EventArgs e)
+    {
+        //Tarkistetaan ensin onko ko. asiakasta jo olemassa LINQ lambda-funktiolla
+        bool isThere = ctx.Customers.Any(c => (c.firstname.Contains(txtEtunimi.Text) & c.lastname.Contains(txtSukunimi.Text)));
+        if (isThere)
+        {
+            lblMessages.Text = string.Format("Asiakas {0} on jo olemassa", txtSukunimi.Text);
+        }
+        else
+        {
+            //luodaan kontekstiin uusi asiakas entiteetti
+            Customer cus = new Customer();
+            cus.firstname = txtEtunimi.Text;
+            cus.lastname = txtSukunimi.Text;
+            ctx.Customers.Add(cus);
+            ctx.SaveChanges();
+            lblMessages.Text = string.Format("uusi asiakas {0} {1} {2} luotu onnistuneesti", cus.id, cus.firstname, cus.lastname);
+            //päivitetään controllit
+            FillControls();
+        }
+    }
+
+    protected void btnTallenna_Click(object sender, EventArgs e)
+    {
+        //haetaan valitun asiakkaan id
+        int i = int.Parse(ddlCustomers.SelectedValue);
+        if (i > 0)
+        {
+            var ret = ctx.Customers.Where(c => c.id == i);
+            Customer cus = ret.FirstOrDefault();
+            if(cus != null)
+            {
+                if(cus.firstname != txtEtunimi.Text)
+                {
+                    cus.firstname = txtEtunimi.Text;
+                }
+                if (cus.lastname != txtSukunimi.Text)
+                {
+                    cus.lastname = txtSukunimi.Text;
+                }
+                ctx.SaveChanges();
+                FillControls();
+            }
+        }
+    }
+
+    protected void btnPoista_Click(object sender, EventArgs e)
+    {
+        //Poistetaan valittu asiakas
+        if (KustiValittu)
+        {
+            //huomioi myös business logiikka eli onko oikeasti järkevää vai tulisiko flägätä
+            //tässä tapauksessa saa poistaa vian sellaisia asiakkaita joilla ei ole tilauksia.
+            int i = int.Parse(ddlCustomers.SelectedValue);
+            var ret = ctx.Customers.Where(c => c.id == i);
+            Customer cus = ret.FirstOrDefault();
+            if (i > 0) { 
+                // tutkitaan onko kustilla tialuksia, jos on ei poisteta
+                if(cus.Orders.Count == 0)
+                {
+                    ctx.Customers.Remove(cus);
+                    ctx.SaveChanges();
+
+                    KustiValittu = false;
+                    FillControls();
+                }
+                else
+                {
+                    lblMessages.Text = string.Format("Asiakasta {0} ei voi poistaa, kosaka hänellä on {1} tilausta", cus.lastname, cus.Orders.Count);
                 }
             }
         }
