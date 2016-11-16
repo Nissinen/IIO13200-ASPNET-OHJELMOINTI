@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Tehtava5.aspx.cs" Inherits="Tehtava5" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Tehtava5EF.aspx.cs" Inherits="Tehtava5" %>
 
 <!DOCTYPE html>
 
