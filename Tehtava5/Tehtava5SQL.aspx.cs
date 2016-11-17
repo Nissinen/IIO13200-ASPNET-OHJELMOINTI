@@ -57,7 +57,6 @@ public partial class Tehtava5 : System.Web.UI.Page
         {
             SqlConnection conn = new SqlConnection(ConnString);
             SqlCommand MyCommand = new SqlCommand(select, conn);
-            
             conn.Open();
             SqlDataReader MyReader = MyCommand.ExecuteReader();
             gvAsiakkaat.DataSource = MyReader;
