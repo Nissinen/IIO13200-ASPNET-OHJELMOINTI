@@ -1,0 +1,30 @@
+Mark down ASP.NET:ss‰ - MarkedNet
+
+1. MarkedNet asennus
+	-Nuget package managerilla
+
+2.Tietoa j‰rjestelm‰st‰
+	-MarkedNet:ll‰ pystyt‰‰n kirjoittamaan dokumenttej‰ webformeissa mark downing avulla html muotoon.
+	-Erinomainen tapa kirjoittaa html:‰‰ ja pienent‰‰ Cross site scriptingin mahdollisuutta.
+
+3.J‰rjestelm‰vaatimuksena
+	-Visual studio
+
+4.Ohjelmiston mukana tulevat tiedostot
+	-MarkedNet.dll
+
+5.Oletushakemistojen asettaminen
+	-Ei ole
+
+6.Huomioitavaa
+	-MIT lisenssin alainen
+	-Hyvin optimoitu
+
+7.Tiedossa olevat ongelmat
+	-Huomioi vain standardin markdownin, jollei l‰hde itse muokkaamaan avointa l‰hdekoodia
+
+8.Mit‰ opittu?
+	-Markdown tiedostojen lukemista ja kirjoittamista C# ohjelmistossa v‰hent‰m‰ll‰ XSS riski‰
+
+9.Tekij‰
+	-T-Alex
